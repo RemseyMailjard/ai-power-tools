@@ -21,8 +21,7 @@ jobs:
 
       - name: Assemble and extract repository
         run: |
-          cat .repository-import/archive.b64.part-* > /tmp/archive.b64
-          base64 -d /tmp/archive.b64 > /tmp/repository.zip
+          cat .repository-import/archive.part-* > /tmp/repository.zip
           unzip -o /tmp/repository.zip -d .
           rm -rf .repository-import
           rm -f .github/workflows/import-repository.yml
